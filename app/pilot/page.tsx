@@ -3,10 +3,11 @@ import { SiteFooter, SiteHeader } from "../components";
 
 export const metadata = { title: "Throwline Pilot", description: "Join the first Throwline pilot for independent tree care companies." };
 
-export default async function Pilot({ searchParams }: { searchParams: Promise<{ company?: string }> }) {
-  const { company } = await searchParams;
-  const subject = encodeURIComponent(`Throwline pilot${company ? ` — ${company}` : ""}`);
-  const body = encodeURIComponent(`Hi Throwline,\n\nI would like a growth review${company ? ` for ${company}` : ""}.\n\nThe part I most want to improve is:\n\n`);
+export default async function Pilot({ searchParams }: { searchParams: Promise<{ website?: string }> }) {
+  const { website } = await searchParams;
+  const reviewTarget = website?.trim();
+  const subject = encodeURIComponent(`Throwline website review${reviewTarget ? ` — ${reviewTarget}` : ""}`);
+  const body = encodeURIComponent(`Hi Throwline,\n\nI would like a growth review${reviewTarget ? ` for ${reviewTarget}` : ""}.\n\nThe part I most want to improve is:\n\n`);
   return (
     <>
       <SiteHeader />
@@ -24,7 +25,7 @@ export default async function Pilot({ searchParams }: { searchParams: Promise<{ 
           </div>
           <aside className="pilot-card">
             <p className="card-kicker">Free first step</p>
-            <h2>{company ? `A free review for ${company}` : "A 30-minute growth review"}</h2>
+            <h2>{reviewTarget ? `A free review of ${reviewTarget}` : "A 30-minute growth review"}</h2>
             <ul><li><span>✓</span> Lead response check</li><li><span>✓</span> Estimate follow-up check</li><li><span>✓</span> Local search gaps</li><li><span>✓</span> One clear next move</li></ul>
             <a className="button button-green button-wide" href={`mailto:info@comarca.ai?subject=${subject}&body=${body}`}>Get my free review <span>↗</span></a>
             <small>No pitch. No migration. Just a clear next move.</small>

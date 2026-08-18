@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ProductVisual as ProductVisualName } from "./product-data";
 import { products } from "./product-data";
+import { ProductMenu } from "./product-menu";
 
 export function LogoMark({ small = false }: { small?: boolean }) {
   return <span className={`brand-mark${small ? " brand-mark-small" : ""}`} aria-hidden="true"><i /><b /></span>;
@@ -21,18 +22,7 @@ export function SiteHeader() {
       <div className="nav-shell">
         <Brand />
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <details className="product-menu">
-            <summary>Product <span aria-hidden="true">⌄</span></summary>
-            <div className="product-menu-panel">
-              <p className="menu-kicker">Four ways to win more work.</p>
-              {products.map((product) => (
-                <Link href={`/product/${product.slug}`} key={product.slug}>
-                  <span>{product.navLabel}</span>
-                  <small>{product.eyebrow}</small>
-                </Link>
-              ))}
-            </div>
-          </details>
+          <ProductMenu />
           <Link href="/how-it-works">How it works</Link>
           <Link href="/pilot">Pilot</Link>
           <Link href="/about">Company</Link>
@@ -90,11 +80,15 @@ export function SiteFooter() {
 }
 
 export function LeadForm({ compact = false }: { compact?: boolean }) {
+  const inputId = compact ? "website-compact" : "website-hero";
   return (
     <form className={`lead-form${compact ? " lead-form-compact" : ""}`} action="/pilot" method="get">
-      <label className="sr-only" htmlFor={compact ? "company-compact" : "company-hero"}>Tree company name</label>
-      <input id={compact ? "company-compact" : "company-hero"} name="company" placeholder="Your tree company" autoComplete="organization" />
-      <button type="submit">Get my free review <span aria-hidden="true">↗</span></button>
+      <label className="sr-only" htmlFor={inputId}>Company website</label>
+      <div className="lead-form-field">
+        <span aria-hidden="true">Website</span>
+        <input id={inputId} name="website" placeholder="yourcompany.com" autoComplete="url" inputMode="url" required />
+      </div>
+      <button type="submit">Review my website <span aria-hidden="true">↗</span></button>
     </form>
   );
 }
@@ -177,7 +171,7 @@ export function CTA({ title = "Stop letting good jobs slip." }: { title?: string
       <h2>{title}</h2>
       <p>See where leads and estimates are going cold.</p>
       <LeadForm compact />
-      <small>Free review · Keep the tools you use</small>
+      <small>Website review · Keep the tools you use</small>
     </section>
   );
 }

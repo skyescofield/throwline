@@ -12,7 +12,7 @@ export default function Home() {
           <h1>More tree work. <em>Less chasing.</em></h1>
           <p className="hero-copy">Throwline replies to leads, follows up on estimates, and brings past customers back—while your crew stays on the job.</p>
           <LeadForm />
-          <p className="hero-caption">Free 30-minute review <span>•</span> Keep the tools you use</p>
+          <p className="hero-caption">Enter your website <span>•</span> Get a free 30-minute review</p>
           <div className="hero-stage">
             <div className="hero-gradient" />
             <div className="hero-phone">

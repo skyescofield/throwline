@@ -14,11 +14,10 @@ export default function About() {
           <p>Throwline helps independent tree companies grow without becoming software companies.</p>
         </section>
         <section className="about-story section-shell">
-          <div className="story-image">
-            {/* The direct asset keeps this Pages deployment independent of an image-optimization binding. */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/arborist-climber.jpg" alt="Tree care crew working with climbing equipment" />
-            <span>The throwline is the first precise move that makes the rest of a climb possible.</span>
+          <div className="story-graphic" aria-label="A throwline creating a path into the canopy">
+            <div className="story-canopy" aria-hidden="true"><i /><i /><i /><i /></div>
+            <div className="story-rope" aria-hidden="true"><i /></div>
+            <span>One precise first move creates a clear path up.</span>
           </div>
           <div className="story-copy"><p className="eyebrow">Why the name</p><h2>The first move matters.</h2><p>A throwline gives a climber access to the canopy. Place it well and the rest of the job can move.</p><p>We do the same for growth: find the best starting point and draw a clear line to booked work.</p></div>
         </section>
