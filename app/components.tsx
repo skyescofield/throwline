@@ -38,7 +38,6 @@ export function SiteHeader() {
           <Link href="/about">Company</Link>
         </nav>
         <div className="nav-actions">
-          <Link href="/how-it-works" className="text-link">How it works</Link>
           <Link href="/pilot" className="button button-dark button-small">Get a free review</Link>
         </div>
         <details className="mobile-menu">
