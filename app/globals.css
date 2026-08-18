@@ -44,14 +44,13 @@ img { display: block; max-width: 100%; }
 .desktop-nav > a { transition: opacity .2s ease; }
 .desktop-nav > a:hover { opacity: .55; }
 .product-menu { position: relative; }
-.product-menu > button { min-height: 44px; padding: 0 14px; display: inline-flex; align-items: center; gap: 7px; border: 0; border-radius: 13px; background: transparent; color: inherit; font: inherit; cursor: pointer; transition: background .2s ease; }
-.product-menu > button:hover, .product-menu.is-open > button { background: #f0f1ee; }
-.product-menu > button span { display: inline-block; font-size: 12px; transition: transform .2s ease; }
-.product-menu.is-open > button span { transform: rotate(180deg); }
-.product-menu-scrim { position: fixed; z-index: 55; inset: 76px 0 0; background: rgba(16, 27, 19, .12); backdrop-filter: blur(2px); }
-.product-menu-scrim[hidden] { display: none; }
+.product-menu > summary { min-height: 44px; padding: 0 14px; display: inline-flex; align-items: center; gap: 7px; border: 0; border-radius: 13px; background: transparent; color: inherit; font: inherit; list-style: none; cursor: pointer; transition: background .2s ease; }
+.product-menu > summary::-webkit-details-marker { display: none; }
+.product-menu > summary:hover, .product-menu[open] > summary { background: #f0f1ee; }
+.product-menu > summary span { display: inline-block; font-size: 12px; transition: transform .2s ease; }
+.product-menu[open] > summary span { transform: rotate(180deg); }
+.product-menu[open]::before { content: ""; position: fixed; z-index: 55; inset: 76px 0 0; pointer-events: none; background: rgba(16, 27, 19, .12); backdrop-filter: blur(2px); }
 .product-menu-panel { position: fixed; z-index: 60; top: 80px; left: 50%; width: min(1120px, calc(100vw - 48px)); min-height: 430px; padding: 28px; display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 30px 80px rgba(18, 31, 22, .16); transform: translateX(-50%); }
-.product-menu-panel[hidden] { display: none; }
 .product-menu-groups { padding-right: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 42px; border-right: 1px solid var(--line); }
 .product-menu-group { min-width: 0; }
 .product-menu-group > p { margin: 0 0 13px; color: #8a908a; font-size: 12px; font-weight: 530; }
