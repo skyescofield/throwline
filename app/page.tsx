@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CTA, LeadForm, ProductVisual, SiteFooter, SiteHeader } from "./components";
+import { CTA, LeadForm, LogoMark, ProductVisual, SiteFooter, SiteHeader } from "./components";
 import { products } from "./product-data";
 
 export default function Home() {
@@ -8,18 +8,18 @@ export default function Home() {
       <SiteHeader />
       <main>
         <section className="hero">
-          <p className="proof-line"><span className="proof-mark">T</span> Purpose-built for independent tree care companies</p>
-          <h1>The managed growth platform tree companies use to <em>win more jobs.</em></h1>
-          <p className="hero-copy">Throwline answers new leads, follows every estimate, sharpens your local presence, and brings past customers back—without another dashboard to babysit.</p>
+          <p className="proof-line"><LogoMark small /> Built for tree companies</p>
+          <h1>More tree work. <em>Less chasing.</em></h1>
+          <p className="hero-copy">Throwline replies to leads, follows up on estimates, and brings past customers back—while your crew stays on the job.</p>
           <LeadForm />
-          <p className="hero-caption">Free growth review <span>•</span> Built around your current tools</p>
+          <p className="hero-caption">Free 30-minute review <span>•</span> Keep the tools you use</p>
           <div className="hero-stage">
             <div className="hero-gradient" />
             <div className="hero-phone">
               <div className="phone-speaker" />
               <div className="phone-status"><strong>9:41</strong><span>● ● ●</span></div>
-              <div className="phone-brand"><span className="mini-mark">T</span> Throwline</div>
-              <h3>You have a new removal lead.</h3>
+              <div className="phone-brand"><LogoMark small /> Throwline</div>
+              <h3>New removal lead.</h3>
               <div className="phone-lead">
                 <div><span>Qualified</span><b>Emergency removal</b></div>
                 <p>Large red oak limb down across driveway. No utility contact. Photos received.</p>
@@ -28,19 +28,19 @@ export default function Home() {
               <button type="button">View lead <span>↗</span></button>
             </div>
             <div className="floating-card floating-card-left"><span>Response time</span><strong>18 sec</strong><small>Lead qualified and booked</small></div>
-            <div className="floating-card floating-card-right"><span>Next best action</span><strong>Call Cedar Ridge HOA</strong><small>Estimate viewed 4 times</small></div>
+            <div className="floating-card floating-card-right"><span>Call next</span><strong>Cedar Ridge HOA</strong><small>Estimate viewed 4 times</small></div>
           </div>
         </section>
 
         <section className="outcome-strip section-shell">
           <div className="section-intro centered">
-            <p className="eyebrow">The work between the work</p>
-            <h2>More demand. Faster response. Better follow-through.</h2>
+            <p className="eyebrow">Never let good work go cold</p>
+            <h2>Every lead. Every estimate. Every customer.</h2>
           </div>
           <div className="outcome-cards">
-            <article><span>01</span><strong>Every lead</strong><p>Gets a fast, useful response while your team stays focused on the job.</p></article>
-            <article><span>02</span><strong>Every estimate</strong><p>Gets thoughtful follow-up until the customer decides or the timing changes.</p></article>
-            <article><span>03</span><strong>Every relationship</strong><p>Becomes a chance for repeat work, reviews, and referrals.</p></article>
+            <article><span>01</span><strong>New leads</strong><p>Answered in seconds.</p></article>
+            <article><span>02</span><strong>Open estimates</strong><p>Followed up until there is an answer.</p></article>
+            <article><span>03</span><strong>Past customers</strong><p>Brought back at the right time.</p></article>
           </div>
         </section>
 
@@ -49,16 +49,16 @@ export default function Home() {
             {/* The direct asset keeps this Pages deployment independent of an image-optimization binding. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/arborist-climber.jpg" alt="Professional arborist preparing to climb a mature tree" />
-            <div className="image-label"><span>Built for the field</span><strong>Your crew should not have to stop working to keep growth moving.</strong></div>
+            <div className="image-label"><span>Made for working crews</span><strong>Growth keeps moving while your team does.</strong></div>
           </div>
           <div className="field-copy">
-            <p className="eyebrow">Managed, not just installed</p>
-            <h2>Your growth crew, without another team to manage.</h2>
-            <p>Most software gives you a login and another list of things to do. Throwline’s agents do the ongoing work, learn your business rules, and bring your team the decisions that need a human.</p>
+            <p className="eyebrow">We run it for you</p>
+            <h2>It works. You do not babysit it.</h2>
+            <p>Throwline handles the follow-up and flags only the calls that need you.</p>
             <ul className="check-list">
-              <li><span>✓</span> Works around the systems you already use</li>
-              <li><span>✓</span> Learns your services, territory, and ideal jobs</li>
-              <li><span>✓</span> Measures booked work—not clicks and activity</li>
+              <li><span>✓</span> Fits the tools you already use</li>
+              <li><span>✓</span> Follows your services and service area</li>
+              <li><span>✓</span> Measures booked work, not busywork</li>
             </ul>
             <Link className="inline-arrow" href="/how-it-works">See how Throwline works <span>↗</span></Link>
           </div>
@@ -66,8 +66,8 @@ export default function Home() {
 
         <section className="product-section section-shell">
           <div className="section-intro split-intro">
-            <div><p className="eyebrow">One connected system</p><h2>From first search to the next job.</h2></div>
-            <p>Throwline focuses on the parts of growth that usually fall between people, vendors, and software.</p>
+            <div><p className="eyebrow">One system</p><h2>Find it. Win it. Keep it.</h2></div>
+            <p>Throwline closes the gaps that cost tree companies jobs.</p>
           </div>
           <div className="product-stack">
             {products.map((product, index) => (
@@ -87,33 +87,33 @@ export default function Home() {
 
         <section className="job-flow section-shell">
           <div className="section-intro centered narrow">
-            <p className="eyebrow">Built around how tree work is sold</p>
-            <h2>One clean handoff at every stage.</h2>
+            <p className="eyebrow">From first call to repeat work</p>
+            <h2>Keep every job moving.</h2>
           </div>
           <div className="job-flow-line" aria-hidden="true" />
           <ol>
-            <li><span>01</span><strong>Inquiry</strong><p>Capture the service, urgency, location, access, and photos.</p></li>
-            <li><span>02</span><strong>Site visit</strong><p>Schedule the right estimator with the context already collected.</p></li>
-            <li><span>03</span><strong>Estimate</strong><p>Stay close to the decision and surface genuine buying signals.</p></li>
-            <li><span>04</span><strong>Next job</strong><p>Turn completed work into reviews, referrals, and future care.</p></li>
+            <li><span>01</span><strong>Inquiry</strong><p>Get the details and photos.</p></li>
+            <li><span>02</span><strong>Site visit</strong><p>Book the right estimator.</p></li>
+            <li><span>03</span><strong>Estimate</strong><p>Follow up until they decide.</p></li>
+            <li><span>04</span><strong>Next job</strong><p>Earn the review and repeat work.</p></li>
           </ol>
         </section>
 
         <section className="principle-section">
           <div className="principle-orbit" aria-hidden="true"><i /><i /><i /></div>
-          <p className="eyebrow">Why Throwline</p>
-          <h2>Independent companies deserve the same growth machinery as the national brands.</h2>
-          <p>Tree care is local, skilled, high-trust work. The technology should strengthen the companies that do it well—not turn them into call centers.</p>
-          <Link href="/about" className="button button-light">Our point of view</Link>
+          <p className="eyebrow">Built for independents</p>
+          <h2>Local tree companies should win.</h2>
+          <p>You do skilled, trusted work. Throwline gives you the follow-through of a national brand without turning you into one.</p>
+          <Link href="/about" className="button button-light">Why we built it</Link>
         </section>
 
         <section className="faq-section section-shell">
-          <div><p className="eyebrow">Questions, answered</p><h2>Designed to be useful before it is complicated.</h2></div>
+          <div><p className="eyebrow">Good questions</p><h2>Straight answers.</h2></div>
           <div className="faq-list">
-            <details><summary>Is Throwline a CRM?<span>+</span></summary><p>No. Throwline is the managed growth layer around the systems you already use. It can work with a CRM, calendar, phone, email, and website rather than asking you to replace everything on day one.</p></details>
-            <details><summary>Does it answer calls and texts?<span>+</span></summary><p>That is one of the first workflows being developed. Throwline is designed to respond, qualify, collect photos and job details, and book the right next step using your rules.</p></details>
-            <details><summary>Will it sound like my company?<span>+</span></summary><p>Yes. Service areas, vocabulary, hours, escalation rules, and tone are configured around your business. You approve the important boundaries before anything runs.</p></details>
-            <details><summary>Who is the pilot for?<span>+</span></summary><p>Independent tree care companies that already do strong work and want a more consistent way to find, respond to, and convert demand. The first pilot is intentionally hands-on.</p></details>
+            <details><summary>Is Throwline a CRM?<span>+</span></summary><p>No. It works around your phone, calendar, CRM, email, and website.</p></details>
+            <details><summary>Does it answer calls and texts?<span>+</span></summary><p>Yes. It can reply, qualify the job, collect photos, and book the next step using your rules.</p></details>
+            <details><summary>Will it sound like my company?<span>+</span></summary><p>Yes. You set the tone, services, hours, territory, and handoff rules.</p></details>
+            <details><summary>Who is the pilot for?<span>+</span></summary><p>Independent tree companies that do strong work and want fewer good jobs to slip.</p></details>
           </div>
         </section>
 

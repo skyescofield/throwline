@@ -2,11 +2,15 @@ import Link from "next/link";
 import type { ProductVisual as ProductVisualName } from "./product-data";
 import { products } from "./product-data";
 
+export function LogoMark({ small = false }: { small?: boolean }) {
+  return <span className={`brand-mark${small ? " brand-mark-small" : ""}`} aria-hidden="true"><i /><b /></span>;
+}
+
 export function Brand() {
   return (
     <Link href="/" className="brand" aria-label="Throwline home">
-      <span className="brand-mark" aria-hidden="true"><i /><b /></span>
-      <span>throwline</span>
+      <LogoMark />
+      <span className="brand-word"><span>throw</span><strong>line</strong></span>
     </Link>
   );
 }
@@ -20,7 +24,7 @@ export function SiteHeader() {
           <details className="product-menu">
             <summary>Product <span aria-hidden="true">⌄</span></summary>
             <div className="product-menu-panel">
-              <p className="menu-kicker">One agent. Four growth workflows.</p>
+              <p className="menu-kicker">Four ways to win more work.</p>
               {products.map((product) => (
                 <Link href={`/product/${product.slug}`} key={product.slug}>
                   <span>{product.navLabel}</span>
@@ -34,8 +38,8 @@ export function SiteHeader() {
           <Link href="/about">Company</Link>
         </nav>
         <div className="nav-actions">
-          <Link href="/how-it-works" className="text-link">See the system</Link>
-          <Link href="/pilot" className="button button-dark button-small">Get a growth plan</Link>
+          <Link href="/how-it-works" className="text-link">How it works</Link>
+          <Link href="/pilot" className="button button-dark button-small">Get a free review</Link>
         </div>
         <details className="mobile-menu">
           <summary aria-label="Open menu"><span /><span /></summary>
@@ -58,7 +62,7 @@ export function SiteFooter() {
       <div className="footer-top">
         <div>
           <Brand />
-          <p>Managed growth for independent tree care companies.</p>
+          <p>More tree work. Less chasing.</p>
         </div>
         <div className="footer-links">
           <div>
@@ -90,8 +94,8 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
   return (
     <form className={`lead-form${compact ? " lead-form-compact" : ""}`} action="/pilot" method="get">
       <label className="sr-only" htmlFor={compact ? "company-compact" : "company-hero"}>Tree company name</label>
-      <input id={compact ? "company-compact" : "company-hero"} name="company" placeholder="Enter your tree company name" autoComplete="organization" />
-      <button type="submit">Get my growth plan <span aria-hidden="true">↗</span></button>
+      <input id={compact ? "company-compact" : "company-hero"} name="company" placeholder="Your tree company" autoComplete="organization" />
+      <button type="submit">Get my free review <span aria-hidden="true">↗</span></button>
     </form>
   );
 }
@@ -166,15 +170,15 @@ export function ProductVisual({ type, compact = false }: { type: ProductVisualNa
   );
 }
 
-export function CTA({ title = "Put your growth work on a line that runs." }: { title?: string }) {
+export function CTA({ title = "Stop letting good jobs slip." }: { title?: string }) {
   return (
     <section className="cta-section">
       <div className="cta-rope" aria-hidden="true" />
-      <p className="eyebrow">Built for the first move</p>
+      <p className="eyebrow">Start here</p>
       <h2>{title}</h2>
-      <p>See where Throwline can find, respond to, and convert more of the demand already around your tree care business.</p>
+      <p>See where leads and estimates are going cold.</p>
       <LeadForm compact />
-      <small>Free growth review · No software migration required</small>
+      <small>Free review · Keep the tools you use</small>
     </section>
   );
 }
